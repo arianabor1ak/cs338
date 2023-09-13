@@ -1,0 +1,4 @@
+Ariana Borlak
+
+I plan to use Kali both on my personal laptop and potentially the lab computers. 
+I've successfully installed Kali on my personal laptop.
