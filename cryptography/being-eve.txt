@@ -1,0 +1,18 @@
+Ariana Borlak
+
+===== DIFFIE-HELLMAN =====
+
+Alice's random number is 41 and Bob's is 23. Both Alice and Bob used their random
+number r to compute the number they sent to each other with the equation g^r mod p,
+given g = 7 and p = 61. So for Alice, 7^r mod 61 = 30 and for Bob 7^r mod 61 = 17.
+I wrote a short Python script "cryptography/d-h.py" to count up from 0 until it hit 
+a solution for r that satisfied the values Alice and Bob sent to each other. Since
+this is a brute-force strategy for finding the random numbers, this script would 
+fail for larger numbers.
+
+The secret key agreed upon by Alice and Bob is thus 6. The equation for the secret 
+key is g^(ab) mod p, where a and b are Alice and Bob's random numbers. So the 
+equation would be 7^(41*23) mod 61, which comes out to 6.
+
+===== RSA =====
+
