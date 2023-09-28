@@ -16,3 +16,16 @@ equation would be 7^(41*23) mod 61, which comes out to 6.
 
 ===== RSA =====
 
+For n = 170171, p = 379 and q = 449. I found these values by writing a Python loop in
+"rsa.py" that goes through all the digits from 2 to 170171 until it finds its prime
+factors. Using these values for p and q, and e = 17, I wrote another loop that tries 
+every possible value for d in the equation ed = 1 mod (p-1)(q-1) until it finds a 
+solution. Thus I found that d = 119537 satisfies the equation. The first loop could be
+more efficient by only looping through prime numbers, but the second loop is where 
+this process would fail, since with a large modulus trying to find d would take too
+long.
+
+
+The encoding is insecure because
+
+hex(number)
