@@ -48,7 +48,17 @@ message = [18537, 8258, 28514, 11808, 18727, 27936, 30561, 27755,
 11639, 25901, 26721, 30309, 11621, 30309, 29229, 29285, 30313, 
 25975, 25956, 11622, 28530, 11632, 29289, 30305, 25465, 12032]
 
+hex_string = ""
 decoded = ""
+
+#used this to figure out how to convert hex to ascii
+#https://sparkbyexamples.com/python/python-hex-to-string/#:~:text=How%20to%20convert%20hex%20to,using%20an%20appropriate%20character%20encoding.
 
 for chunk in message:
 	d_hex = hex(chunk)
+	hex_string += d_hex[2:]
+
+print(hex_string)
+byte_string = bytes.fromhex(hex_string)
+decoded = byte_string.decode('ascii')
+print(decoded)

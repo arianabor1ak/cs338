@@ -22,10 +22,15 @@ factors. Using these values for p and q, and e = 17, I wrote another loop that t
 every possible value for d in the equation ed = 1 mod (p-1)(q-1) until it finds a 
 solution. Thus I found that d = 119537 satisfies the equation. The first loop could be
 more efficient by only looping through prime numbers, but the second loop is where 
-this process would fail, since with a large modulus trying to find d would take too
-long.
+this process would fail with larger numbers, since with a large modulus trying to find 
+d would take too long.
 
+To decode the message, since Alice used Bob's public key to encrypt the message, the 
+ciphertext is M^e mod n, and since the plaintext is M^ed mod n, I wrote some Python
+to unencrypt each chunk of the ciphertext and store it in a list. I then converted
+that list to hexadecimal and decoded it with ASCII.
 
-The encoding is insecure because
+The message is: Hi Bob. I'm walking from now on. Your pal, Alice. https://foundation.mozilla.org/en/privacynotincluded/articles/its-official-cars-are-the-worst-product-category-we-have-ever-reviewed-for-privacy/
 
-hex(number)
+The encoding is insecure because there are only 128 bits used in ASCII, so the 
+ciphertext will not be very spread out with its bits.
