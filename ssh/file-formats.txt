@@ -43,6 +43,12 @@ W9p/AXZ2L2qEajTxRbkg6xZyyrJB/0ilvcq3QbOQvCl5XUlocBXQ3A==
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDazs42TQsL9bcuLLypYtgDUIOtD7uHSPvWU8KI45kmIpfdEa3l4pUvpOacekGoqN7qS7wQoL4EVnTFNPE3XJjSVCGaLvcyjOenZtWD94r2J3FXIXHLtoNQMCMUtu/920Wg980JwVKEDU5uqcvYpnAyy7e1ntuJUH3fRxFN+mQUnx+RRe6lGHaLt1vewEszqrbSyclEfHfeUcUHQUBaX4jNEIPxnR45MgtXAehSP0nABqMGQNDAy8bSyWdotbrIhjMR7Jhdp+DE+IFVIQQuGAgWJPyoIZI4UXPb1j9mIRiZK1Lwx2+7RUC8aREyZD6SAcGDON111gADT8NvR4DRYSnz+7DU/vkRd9zGJsa/1M03DzqhSjc3mTjEn6yfkwZQMlCBnLusSByuhU/SUmElyAr5EI1xmqdBXe/ydJF23CnXAaJxqBLzm2J4r6XxloBU1vycqGv1ymRudJmOeaGoA39hWbtXwUYwFY7CxTG3z1oSjnpFx8efZirA30Hc3z4fFGc= arianab@DESKTOP-64KCOHC
 
 ===== PRIVATE KEY =====
+I would expect to find the version, modulus, public exponent, private exponent, prime
+1, prime 2, exponent 1, exponent 2, and coefficient (not the other primes info since
+version will be 0).
+
+To decode the file I pasted it into Lapo Luchini's decoder, including the header and
+footer.
 
 ===== PUBLIC KEY =====
 
