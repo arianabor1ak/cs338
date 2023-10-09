@@ -50,7 +50,7 @@ version will be 0).
 To decode the file I pasted it into Lapo Luchini's decoder, including the header and
 footer, and clicked decode.
 
-Integers:
+Contents:
 	Version
 		-Value of 0
 		-Starting index is 4. The first byte of the encoding 0x02 is the identifier
@@ -163,6 +163,36 @@ Integers:
 		that the value length is 193.
 
 ===== PUBLIC KEY =====
-I would expect to find the modulus and the public exponent.
+I would expect to find the public key format identifier, the public exponent (e), and 
+the modulus (n).
+
+I decoded the file by taking the public key without the header and footer and pasting
+it into a base64 to hexadecimal decoder.
+
+Contents:
+	Public key format identifier
+		-Value is "ssh-rsa"
+		-The first four bytes describe the length of the string, which is 7. The next
+		7 bytes are then the value of the string.
+	Public exponent
+		-Value is 65537.
+		-The first four bytes describe the number of bytes in the integer: 3. The next 
+		3 bytes	are the value of the integer.
+	Modulus
+		-Value is 4965575408258415601664740064731858906416348069877759834347435186372
+		13398803666774563035516514310925265018086446570487843678959692330442301449401
+		00930817802119547296414745592064627182173938929893265229924460479357948370818
+		15564747141412870870269369933636786434421716959397614325422666438173673030049
+		50633156195129952641444366247869556181147686734600284050579282490702049148698
+		37080843125726182696086194134558830752186302894788787807061305368410863400089
+		16522364301937345909971004064363616567611274488473220597411484795221971631473
+		21046327414753430938747080995479019287836972558067461111009480959513647915455
+		55539694461586211407580357454664917162385560320920514239007306083548460772811
+		56030273648533622748063719666595899009310301658464735203135543761072696173548
+		15697716417836648267125969106083372017347623909745932847633613369149158589992
+		05818150118564599575653317423658314024424646711440096337936771030369047677890
+		26710066279
+		-The first four bytes describe the number of bytes in the integer: 385. The
+		next 385 bytes are the value.
 
 ===== SANITY CHECK =====
