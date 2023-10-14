@@ -1,0 +1,15 @@
+Ariana Borlak
+
+1. Alice and Bob should agree on a secret key using Diffie-Hellman and subsequently
+Alice can send her message to Bob using the key with AES. AES is faster than public
+key encryption, and Diffie-Hellman is only susceptible to AITM attacks.
+
+2. Alice and Bob should agree on a secret key using Diffie-Hellman. When Alice sends
+her message M she should concatenate a digital signature that is E(S_A, H(M)) onto
+the end of the message. Bob can then verify whether the message has been modified by
+decrypting H(M) with P_A and checking whether H(M) corresponds to the hash of the
+message Bob received.
+
+3. 
+
+4. 
