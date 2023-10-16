@@ -10,6 +10,23 @@ the end of the message. Bob can then verify whether the message has been modifie
 decrypting H(M) with P_A and checking whether H(M) corresponds to the hash of the
 message Bob received.
 
-3. 
+3. Alice and Bob should agree on a secret key using Diffie-Hellman. When Alice sends
+her message M she should concatenate a digital signature E(S_A, H(M)) onto the end of
+the message. Alice should then encrypt the message and digital signature with AES 
+using the D-H key. Bob can then verify that the message was sent by Alice by 
+decrypting the message with the D-H key, decrypting the signature with Alice's P_A,
+and comparing H(M) with the hash of the message Bob received to make sure that only
+Alice could have sent the message since she would need to know both her private key
+and the D-H key.
 
-4. 
+4.  - Alice could say Bob has the wrong public key and that someone else impersonated
+	her to send a false contract. I would find this quite plausible as the judge if 
+	Alice could prove that her public key is different than the one Bob presents.
+	- Alice could say that someone else has access to her private key and signed the
+	contract. I would find this fairly plausible as the judge, but it would be 
+	difficult to prove that the private key had been compromised.
+	- Alice could say there was an AITM attack. As the judge I would not believe this,
+	because creating digital signatures with public/private key pairs is not susceptible
+	to AITM attacks.
+
+5.
