@@ -1,0 +1,96 @@
+Ariana Borlak
+
+Scenario #1
+
+A.  What should you do? 
+	What are the consequences of action/inaction?
+	Whose safety should be prioritized?
+	Will reporting the bug result in a net positive for the people involved?
+
+B.  Main character - should have the right to browse applications and has the legal
+		right to do security research as long as this does not involve bypassing
+		security measures on the application. They should also have the right to
+		responsibly disclose security vulnerabilities.
+	Instatoonz - has the legal right to sue if someone gains unauthorized access
+		to their app; they also morally have the right to know about any security
+		vulnerabilities in their system
+	Customers - should have the right to privacy and the right to know whether their
+		personal information is safe from attackers
+
+C.  One of the main pieces of missing information is how you discovered this bug. This
+		can have more legal implications if you relied on illegal methods of digging
+		through the app. It also has more ethical implications, if it took 
+		circumventing existing security measures to discover the bug and Instatoonz did 
+		not give you permission to do so.
+	Similarly, it would also be useful to know more information about the circumstances
+		of the last bug report. It is likely that the last bug reporter did not 
+		illegally find the bug since the FBI dropped the case, but what happened and
+		why Instatoonz sued is unclear.
+	Going further, an important thing to know would be if Instatoonz fixed the bug
+		that was previously reported, or whether they completely disregarded it.
+	Another thing that would be helpful to know for sure is whether you actually could
+		get in legal trouble for violating the DMCA. In either case, it would be wise
+		to consult with a lawyer before reporting this bug.
+	It would also be helpful to know whether Instatoonz has guaranteed privacy of 
+		customers' information. If clients have been led to believe that all their 
+		private messages will be kept private, they have a right to know about the bug.
+
+D.  Report the bug only to Instatoonz
+		What plays out will most likely be what happened with the last bug report.
+		You will get sued, although there might be less of an uproar. If you are in 
+		fact in violation of the DMCA, you could face serious jail time and fines. If 
+		the bug did not get fixed last time, it most likely will not get fixed this 
+		time. Since Instatoonz does not seem to take security vulnerabilities seriously, 
+		it's unlikely to get fixed either way.
+	Report the bug first to Instatoonz to give them time to fix it, and then make the
+	bug public
+		Instatoonz might still sue you in this scenario so you could again face jail
+		time if you're in violation of the DMCA, but it puts a lot more pressure on 
+		them to at least fix the bug before the vulnerability is made public. Also
+		making the bug public lets customers know that their information is exposed,
+		so they can act accordingly. If Instatoonz does not fix the vulnerability, this
+		opens a door for attackers to begin stealing customers' messages.
+	Do nothing
+		This will keep you out of legal trouble if Instatoonz is oblivious to you 
+		finding the bug. But this still leaves the customers' information vulnerable 
+		for an attacker to exploit, although they would have to dig around to find the
+		bug like you did.
+	Access customers' information and sell it
+		This could put you in an even worse legal situation than if you were in 
+		violation of the DMCA, if Instatoonz found out what you were doing. If 
+		Instatoonz does not notice, you could make a lot of money but the customers
+		will have their right to privacy violated, without their knowledge.
+
+E.  The ACM Code of Ethics implores computing professionals to respect privacy and 
+	honor confidentiality. In this scenario this applies to keeping the customers'
+	messages private and trying to fix the bug that makes them vulnerable.
+
+	The Code of Ethics also advises to avoid harm. This can also apply to keeping the
+	customers' information private, but more significantly applies to keeping yourself
+	from harm. Although reporting the bug would be done in good faith, Instatoonz seems
+	unlikely to act in good faith and may cause you significant harm in either legal 
+	fees or even jail time if they find you're in violation of the DMCA.
+
+F.  If there is any way to remain anonymous when reporting the bug, my recommendation
+	for both options (bug involves encryption/copy-protection or not) is to proceed
+	with the second action, first privately and then publicly reporting the bug. If you
+	remain anonymous, both you and the customers' information will be protected to the
+	best of your ability. Being vague when exposing the bug publicly can also slow down
+	attackers, if Instatoonz does not choose to fix it. This gives Instatoonz the
+	opportunity to fix the bug, but also gives customers knowledge about the situation
+	so they can make more informed decision about sending messages or staying on the
+	platform.
+
+	If you can't remain anonymous but consult with a lawyer and find you are not in
+	violation of the DMCA or any other laws, I would recommend taking the same action.
+	You will likely face some legal fees and general inconveniences, but eventually 
+	Instatoonz will have to back down, and their customers will have more knowledge 
+	about the situation, so there would still be a net positive for most of the
+	stakeholders.
+
+	If you find that you cannot remain anonymous and that you are in violation of the
+	DMCA, I would advise that you do nothing. In this scenario, your safety should be 
+	prioritized since you would face great personal harm for reporting the bug, even 
+	though it would be well a intended action. Instatoonz might not fix the bug if you 
+	do report it, so you could be facing jail time for little good to come out of the 
+	situation.
