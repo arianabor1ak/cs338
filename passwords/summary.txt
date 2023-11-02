@@ -9,17 +9,17 @@ Time per password cracked: [seconds per password]
 Passwords cracked per number of hashes computed: [passwords per hash]
 
 Part 2
-Total time: 38m38.900s
-Number of hashes computed: [count of the # of hashes computed] 
-Passwords cracked: [number cracked]
+Total time: 165m36.625s
+Number of hashes computed: 8604420734
+Passwords cracked: 309
 Time per hash computed: [seconds per hash]
 Time per password cracked: [seconds per password]
 Passwords cracked per number of hashes computed: [passwords per hash]
 
 Part 3
-Total time: [user time from a "time" command]
-Number of hashes computed: [count of the # of hashes computed] 
-Passwords cracked: [number cracked]
+Total time: 11m44.351s
+Number of hashes computed: 731388744
+Passwords cracked: 2734
 Time per hash computed: [seconds per hash]
 Time per password cracked: [seconds per password]
 Passwords cracked per number of hashes computed: [passwords per hash]

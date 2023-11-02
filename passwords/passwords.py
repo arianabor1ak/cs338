@@ -1,5 +1,6 @@
 # Ariana Borlak
 # python3 passwords.py
+# to run each part, uncomment the code for that part in main()
 
 import hashlib
 import binascii
@@ -75,6 +76,7 @@ def compute_hashes_2():
 	second.close()
 	return hashcount, pwd_count
 
+
 def compute_hashes_3():
 	pwd_dict = {}
 	pwd_count = 0
@@ -84,14 +86,20 @@ def compute_hashes_3():
 
 	for line in open('passwords3.txt'):
 		split_line = line.split(":")
-		pwd_dict[split_line[1]] = split_line[0]
+		salt = split_line[1].split("$")[2]
+		hash = split_line[1].split("$")[3]
+
+		pwd_dict[split_line[0]] = [salt, hash]
 
 	words = [line.strip().lower() for line in open('words.txt')]
 
-	second = open("cracked3.txt", 'w')
+	third = open("cracked3.txt", 'w')
+
+	users = pwd_dict.keys()
 	for word in words:
-		for next in words:
-			password = word + next # type=string
+		for user in users:
+			salt = pwd_dict[user][0]
+			password = salt + word # type=string
 
 			encoded_password = password.encode('utf-8') # type=bytes
 			hasher = hashlib.sha256(encoded_password)
@@ -99,12 +107,12 @@ def compute_hashes_3():
 			digest_as_hex = binascii.hexlify(digest) # type=bytes
 			digest_as_hex_string = digest_as_hex.decode('utf-8') # type=string
 
-			if digest_as_hex_string in pwd_dict:
-				second.write(f"{pwd_dict[digest_as_hex_string]}:{password}\n")
+			if digest_as_hex_string == pwd_dict[user][1]:
+				third.write(f"{user}:{word}\n")
 				pwd_count += 1
 
 			hashcount += 1
-	second.close()
+	third.close()
 	return hashcount, pwd_count
 
 def signal_handler(sig, frame):
@@ -116,18 +124,17 @@ def main():
 	signal.signal(signal.SIGINT, signal_handler)
 
 	# PART 1 code:
-	hashes, num_hashes = compute_hashes_1()
-	num_pwds = crack_pwds_1(hashes)
-	print(f"Hashes computed: {num_hashes}\nNumber of cracked passwords: {num_pwds}")
+	# hashes, num_hashes = compute_hashes_1()
+	# num_pwds = crack_pwds_1(hashes)
+	# print(f"Hashes computed: {num_hashes}\nNumber of cracked passwords: {num_pwds}")
 
 	# PART 2 code:
 	# num_hashes, num_pwds = compute_hashes_2()
 	# print(f"Hashes computed: {num_hashes}\nNumber of cracked passwords: {num_pwds}")
 
 	# PART 3 code:
-
-
-
+	num_hashes, num_pwds = compute_hashes_3()
+	print(f"Hashes computed: {num_hashes}\nNumber of cracked passwords: {num_pwds}")
 
 if __name__ == "__main__":
 	main()
