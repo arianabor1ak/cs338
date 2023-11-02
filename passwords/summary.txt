@@ -4,31 +4,55 @@ Part 1
 Total time: 0m0.462s
 Number of hashes computed: 267516
 Passwords cracked: 2734
-Time per hash computed: [seconds per hash]
-Time per password cracked: [seconds per password]
-Passwords cracked per number of hashes computed: [passwords per hash]
+Time per hash computed: 1.73 x 10^-6 seconds per hash
+Time per password cracked: 1.69 x 10^-4 seconds per password
+Passwords cracked per number of hashes computed: 1.02 x 10^-2 passwords per hash
 
 Part 2
-Total time: 165m36.625s
-Number of hashes computed: 8604420734
+Total time: 165m36.625s (9936.625s)
+Number of hashes computed: 8 604 420 734
 Passwords cracked: 309
-Time per hash computed: [seconds per hash]
-Time per password cracked: [seconds per password]
-Passwords cracked per number of hashes computed: [passwords per hash]
+Time per hash computed: 1.15 x 10^-6 seconds per hash
+Time per password cracked: 32.157 seconds per password
+Passwords cracked per number of hashes computed: 3.59 x 10^-8 passwords per hash
 
 Part 3
-Total time: 11m44.351s
+Total time: 11m44.351s (704.351s)
 Number of hashes computed: 731388744
 Passwords cracked: 2734
-Time per hash computed: [seconds per hash]
-Time per password cracked: [seconds per password]
-Passwords cracked per number of hashes computed: [passwords per hash]
+Time per hash computed: 9.63 x 10^-7 seconds per hash
+Time per password cracked: 2.58 x 10^-1 seconds per password
+Passwords cracked per number of hashes computed: 3.74 x 10^-6 passwords per hash
 
 Analysis:
-- Did your time per hash computed change between phases? By what factor? Why?
-- Did your time per password crack change between phases? By what factor? Why?
-- Suppose you wanted to precompute all the hashes for each possible password
-so you could just look up the password in a table indexed by the hash. How much
-memory would be required for each phase?
-- Give 3-4 reasons we should store password hashes and not the passwords themselves.
-Think in terms of threats, who the attackers might be, etc.
+Did your time per hash computed change between phases? By what factor? Why?
+	The time per hash was about the same for the first two parts, but was about 90 times
+	faster for the third part. This could be because each hash in the last part was only
+	compared to the one salted hash for a user, instead of being compared to every hash.
+
+Did your time per password crack change between phases? By what factor? Why?
+	The time was over 10^3 times slower for phase 3 than for phase 1, and over 10^5 times
+	slower for phase 2 than for phase 1. For phase 2, this is because there are so many
+	more hashes to compute since phase 1 computes n hashes where n is the number of words,
+	while phase 2 computes n^2 hashes. For phase 3, this is also because there are more 
+	hashes to compute, nm, where m is the number of users.
+
+Suppose you wanted to precompute all the hashes for each possible password so you could 
+just look up the password in a table indexed by the hash. How much memory would be 
+required for each phase?
+	For each possible password you would need to store the plaintext password, the hash,
+	and any overhead which would be 80 bytes per password.
+
+	Phase 1: 2.14 x 10^7 bytes
+	Phase 2: 5.73 x 10^12 bytes
+	Phase 3: 5.85 x 10^10 bytes
+
+Give 3-4 reasons we should store password hashes and not the passwords themselves. Think 
+in terms of threats, who the attackers might be, etc.
+	- Hashes are pre-image resistant so one of the only ways to find a password given
+		a hash is to brute force possible passwords and hash them, which takes a very
+		long time and/or lots of memory.
+	- Employees at a company with access to a database of passwords won't be able to 
+		abuse their power and access personal accounts if only hashes are stored.
+	- If password hashes are leaked, a company can have time to get users to reset their
+		passwords and minimize the threat.
