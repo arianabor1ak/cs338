@@ -1,0 +1,10 @@
+Ariana Borlak
+
+===== COOKIES =====
+a. There is one cookie named theme with a value of default.
+
+b. The theme cookie changed its value to blue.
+
+c. 
+
+===== CROSS-SITE SCRIPTING =====
