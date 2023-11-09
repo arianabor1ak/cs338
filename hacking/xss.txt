@@ -5,6 +5,13 @@ a. There is one cookie named theme with a value of default.
 
 b. The theme cookie changed its value to blue.
 
-c. 
+c. When first visiting the page, the cookie HTTP header says theme=default. When changing
+	the theme, the cookie header remains theme=default until there is a GET request for
+	theme=blue, and at that point the cookie header changes to theme=blue. This is the 
+	same value as in the inspector.
+
+d. The blue theme is still selected.
+
+e. 
 
 ===== CROSS-SITE SCRIPTING =====
