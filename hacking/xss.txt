@@ -12,6 +12,34 @@ c. When first visiting the page, the cookie HTTP header says theme=default. When
 
 d. The blue theme is still selected.
 
-e. 
+e. There is an HTTP cookie header of theme=value when sending a GET request to the 
+	FDF server, depending on the value of the cookie.
+
+f. The browser sends a GET request to the server to fetch theme=changedvalue and the
+	server sends back the changed page depending on the new cookie value.
+
+g. In the Inspector go to application, then cookies, and select cs338.jeffondich.com. 
+	Then select the theme cookie, and right click to edit the value. Put in the value,
+	hit enter, and refresh the page.
+
+h. You can intercept and change the GET request to have the modified theme value that
+	you want in the request. So instead of GET /fdf/?theme=default HTTP/1.1, you could
+	have it be theme=default and the server will load the blue theme.
+
+i. On my Windows machine, Google Chrome stores the cookies under 
+	C:\Users\arian\AppData\Local\Google\Chrome\User Data\Default\Network in a
+	file named Cookies.
 
 ===== CROSS-SITE SCRIPTING =====
+
+a. 
+Provide a diagram and/or a step-by-step description of the nature and timing of Moriarty's attack on users of the FDF.
+
+b. 
+Describe an XSS attack that is more virulent than Moriarty's "turn something red" and "pop up a message" attacks. Think about what kinds of things the Javascript might have access to via Alice's browser when Alice views the attacker's post.
+
+c. 
+Do it again: describe a second attack that is more virulent than Moriarty's, but that's substantially different from your first idea.
+
+d. 
+What techniques can the server or the browser use to prevent what Moriarty is doing?
