@@ -32,14 +32,14 @@ i. On my Windows machine, Google Chrome stores the cookies under
 
 ===== CROSS-SITE SCRIPTING =====
 
-a. 
-Provide a diagram and/or a step-by-step description of the nature and timing of Moriarty's attack on users of the FDF.
+a.  - Moriarty writes a post with Javascript that changes the text color or pops up an alert
+	- A user clicks on the post
+	- The JS executes the code in the script tags of the post
 
-b. 
-Describe an XSS attack that is more virulent than Moriarty's "turn something red" and "pop up a message" attacks. Think about what kinds of things the Javascript might have access to via Alice's browser when Alice views the attacker's post.
+b. The Javascript code could steal session cookies from a user that clicks on the post.
 
-c. 
-Do it again: describe a second attack that is more virulent than Moriarty's, but that's substantially different from your first idea.
+c. The Javascript code could endlessly loop to make more posts to significantly slow
+	down the server.
 
-d. 
-What techniques can the server or the browser use to prevent what Moriarty is doing?
+d. The server should not trust any user input and clean any input. The browser can also
+	limit which cookies can be accessed by Javascript.
